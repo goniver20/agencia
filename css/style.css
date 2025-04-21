@@ -1,0 +1,296 @@
+:root{
+    --principal:#00A8E8;
+    --secundario: #40E0D0;
+    --llamativo: #FFD700;
+    --verde_esmeralda: #2ECC71;
+    --detalles: #34495E;
+    --blanco: #ffffff;
+
+    --size_fuente_principal: 3.8rem;
+    --fuente_principal: "Poppins", sans-serif;
+}
+/* Globales */
+html{
+    box-sizing: border-box;
+    font-size: 62.5%; /*Hack para box model*/
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+
+body{
+    font-size: 16px;
+    font-family: var(--fuente_principal);
+    font-weight: 400;
+    background-image: linear-gradient(to top, cornflowerblue 0%, #ffffff 100%);
+}
+
+.contenedor{
+    max-width: 120rem;
+    /* margin: 0 auto 0 auto; */
+    margin: 0 auto;
+}
+
+.boton{
+    background-color: var(--principal);
+    color: #ffffff;
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    /* text-transform: uppercase; */
+    border: none;
+}
+
+.boton:hover{
+    cursor: pointer;
+}
+
+/* Fuentes y Tipografías */
+h1{
+    font-size: var(--size_fuente_principal);
+}
+
+h2{
+    font-size: 2.8rem;
+}
+
+h3{
+    font-size: 1.8rem;
+}
+
+h1,h2, h3{
+    text-align: center;
+}
+
+
+.titulo{
+    text-align: center;
+    color: var(--principal);
+    font-family: var(--fuente_principal);
+    font-weight: 400;
+}
+
+.titulo span{
+    font-size: 2rem;
+}
+
+/* utilidades */
+
+.alinear-centro{
+    text-align: center;
+}
+
+.mayus{
+    text-transform: uppercase;
+}
+
+.flex{
+    display: flex;
+}
+.alinear-derecha{
+    justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+    .alinear-derecha{
+        justify-content: flex-start;
+    }
+}
+
+/* .w-100{
+    width: 100;
+ } */
+
+/* Va un media querie aqui, pero personalmente quise dejarlo así */
+
+.nav-bg{
+    background-color: var(--llamativo);
+    border-radius: 1rem;
+}
+
+/* ------------------------------------------- */
+
+.navegacion-principal{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}   
+
+.navegacion-principal a{
+    
+    padding: 1.5rem;
+    color: var(--detalles);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.navegacion-principal a:hover{
+    background-color: var(--principal);
+    color: #ffffff;
+    border-radius: 0.7rem;
+}
+
+.hero {
+    background-image: url(../images/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70rem;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.contenido-hero{
+    position: absolute;
+    /* background-color: rgba(0,0,0,0.45); Versión Anterior*/
+    background-color: rgb(0 0 0 / 45%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p{
+    color: #ffffff;
+
+}
+
+.contenido-hero .ubicacion{
+    display: flex;
+    align-items: flex-end;
+}
+
+.ubicacion svg{
+    color: var(--llamativo);
+}
+
+/* main */
+
+.sombra{
+    -webkit-box-shadow: 10px 13px 19px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 13px 19px -5px rgba(0,0,0,0.75);
+    box-shadow: 10px 13px 19px -5px rgba(0,0,0,0.75);
+    background-color: var(--blanco);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+@media (min-width: 768px) {
+    .contenido-main{
+        display: flex;
+    }   
+}
+
+/* 
+@media (min-width: 768px) {
+    .contenido-main{
+        display: grid;
+        grid-template-columns: 300px 300px;
+        grid-template-rows: 200px 800px;
+
+        grid: 200px 800px / 300px 300px;
+        primero los rows y despues los columns
+        grid-template-columns: 33.3% 33.3% 33.3%;
+        grid-template-columns: 1fr 1fr 2fr;
+        1fr: 25%
+        1fr: 25%
+        2fr: 50%
+        grid-template-columns: repeat(3, 1fr)
+        grid-column-gap: 1rem; Ya no se utiliza
+        column-gap: 1rem; Separación de las columnas.
+
+    }   
+}
+
+*/
+
+.alinear-centro p{
+    line-height: 1.5;
+}
+
+/* Contacto */
+.formulario{
+    background-color: var(--secundario);    
+    width: min(60rem, 100%); /* Utiliza el valor más pequeño*/
+    margin: 0 auto; /*Centrar de manera horizontal esto es 
+    cuando no hay un display tanto grid y/o flex como padre*/
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset{
+    border: none;
+}
+
+legend{
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--detalles); 
+}
+
+.campo{
+    margin: 0 0 1rem 0;
+}
+
+.campo label{
+    color: var(--detalles);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* Selectores de atributo
+.campo input[type="text"],
+.campo input[type="tel"] {
+    background-color: red;
+}
+*/
+
+.input-text{
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+.campo textarea{
+    height: 20rem;
+}
+@media (min-width: 768px) {
+    .contenedor-campos{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto auto auto auto auto;
+        column-gap: 1rem;
+    }    
+
+    .campo:nth-child(5),
+    .campo:nth-child(10),
+    .campo:nth-child(11){
+    grid-column: 1 / 3;
+    }
+}
+
+/* footer */
+.footer{
+    text-align: center;
+    font-weight: 700;
+}
+
+.mensaje{
+    margin-top: 1rem;
+    color: green;
+    font-weight: bold;
+}
